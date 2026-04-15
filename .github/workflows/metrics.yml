@@ -16,20 +16,17 @@ jobs:
       contents: write
     steps:
       - name: Main profile metrics
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ github.repository_owner }}
           filename: github-metrics.svg
           config_timezone: Asia/Tokyo
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
           plugin_repositories: yes
           plugin_repositories_pinned: 6
 
       - name: Language metrics
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ github.repository_owner }}
@@ -44,7 +41,7 @@ jobs:
             shell, gnuplot
 
       - name: Isometric calendar metrics
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ github.repository_owner }}
