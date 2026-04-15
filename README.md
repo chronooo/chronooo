@@ -1,91 +1,101 @@
 <div align="center">
-  <img
-    src="https://capsule-render.vercel.app/api?type=waving&height=220&color=0:050507,20:161329,45:0F1B3A,75:23152E,100:050507&text=Chronooo%20Atelier&fontColor=E7C56D&fontAlign=50&fontAlignY=36&desc=Rain-lit%20castle%20%E2%8B%86%20bilingual%20developer%20profile&descAlignY=54&descAlign=50"
-    alt="Dark fantasy banner"
-    width="100%"
-  />
-  <img src="https://media.giphy.com/media/Sseh4gSbLQ4wBCuoBe/giphy.gif" alt="Marin Kitagawa banner" width="74%" />
-  <br><br>
-  <img
-    src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=600&size=34&duration=3200&pause=1100&color=E7C56D&center=true&vCenter=true&multiline=true&repeat=true&width=1000&height=120&lines=Now+Loading+...;Foreigner+in+Japan+%E2%8B%86+SWE+at+a+Japanese+company;English+%E2%86%94+%E6%97%A5%E6%9C%AC%E8%AA%9E+workflow"
-    alt="Typing intro"
-    width="72%"
-  />
-  <br><br>
-  <img src="https://img.shields.io/badge/style-castle_noir-33284A?style=for-the-badge&labelColor=060608&color=E7C56D" alt="Style badge" />
-  <img src="https://img.shields.io/badge/mood-rain_lit_midnight-1F2E57?style=for-the-badge&labelColor=060608&color=DAB468" alt="Mood badge" />
-  <img src="https://img.shields.io/badge/theme-marin_kitagawa-2A1D3F?style=for-the-badge&labelColor=060608&color=CDA85B" alt="Theme badge" />
-  <br><br>
-  <img src="https://img.shields.io/badge/location-Japan-151625?style=for-the-badge&labelColor=060608&color=E7C56D" alt="Location badge" />
-  <img src="https://img.shields.io/badge/role-Software_Engineer-1A2140?style=for-the-badge&labelColor=060608&color=D4AE61" alt="Role badge" />
-  <img src="https://img.shields.io/badge/language-English_%E2%86%94_%E6%97%A5%E6%9C%AC%E8%AA%9E-2A234D?style=for-the-badge&labelColor=060608&color=C49E54" alt="Bilingual badge" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=0:040406,22:0F1325,45:1D1430,70:0B1E3F,100:040406&text=CHRONOOO%20ATELIER&fontSize=54&fontColor=E7C56D&animation=fadeIn&fontAlign=50&fontAlignY=38&desc=Luxury%20Black%20%7C%20Gold%20%7C%20Anime-Premium%20Profile&descAlignY=58&descAlign=50" width="100%" alt="Header banner" />
+  <br>
+  <img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=600&size=31&duration=3200&pause=950&color=E7C56D&center=true&vCenter=true&multiline=true&repeat=true&width=1000&height=125&lines=Now+Loading...;Foreigner+in+Japan+%E2%8B%86+SWE+at+a+Japanese+company;English+%E2%86%94+%E6%97%A5%E6%9C%AC%E8%AA%9E+workflow" width="82%" alt="Typing banner" />
 </div>
 
-<br>
-
-<div align="center">
-  <h3>Chapter I</h3>
-  <p><i>I am a foreign software engineer living in Japan, building products in a bilingual environment.</i></p>
-  <p><i>日本で暮らす外国籍ソフトウェアエンジニアとして、日英バイリンガルな開発環境でプロダクトを作っています。</i></p>
-</div>
-
-<div align="center">
-  <img src="/github-metrics.svg" alt="Main profile metrics" width="74%">
-</div>
-
-<br>
-
-<table align="center" width="90%">
+<table width="100%">
   <tr>
-    <td width="25%" align="right" valign="middle">
-      <img src="https://media.giphy.com/media/3orieV5d6NQy6z6A6I/giphy.gif" alt="Rainy mood visual" width="90%">
+    <td width="64%" valign="middle">
+      <h2>Obsidian Prologue</h2>
+      <p><i>I build software in Japan with a bilingual product mindset, balancing precision engineering with expressive design.</i></p>
+      <p><i>日本でソフトウェア開発を行いながら、英語と日本語を横断するプロダクト設計を大切にしています。</i></p>
+      <p>
+        <img src="https://img.shields.io/badge/location-Japan-12141F?style=for-the-badge&labelColor=050507&color=E7C56D" alt="Location badge" />
+        <img src="https://img.shields.io/badge/role-Software_Engineer-1A1E33?style=for-the-badge&labelColor=050507&color=D9B86A" alt="Role badge" />
+        <img src="https://img.shields.io/badge/language-English_%E2%86%94_%E6%97%A5%E6%9C%AC%E8%AA%9E-202847?style=for-the-badge&labelColor=050507&color=CBA85D" alt="Language badge" />
+      </p>
     </td>
-    <td width="75%" valign="middle">
-      <h3>Chapter II</h3>
-      <p><i>My workflow moves naturally between English and Japanese for planning, architecture, and delivery.</i></p>
-      <p><i>設計・実装・運用まで、英語と日本語を行き来しながらシームレスに進めています。</i></p>
+    <td width="36%" align="right" valign="middle">
+      <img src="https://media.giphy.com/media/Sseh4gSbLQ4wBCuoBe/giphy.gif" width="100%" alt="Kitagawa Marin visual" />
     </td>
   </tr>
 </table>
 
 <div align="center">
-  <img src="/github-metrics-languages.svg" alt="Languages metrics" width="64%">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=0:E7C56D,100:8C6A2F" width="100%" alt="Divider" />
 </div>
 
-<br>
-
-<table align="center" width="90%">
+<table width="100%">
   <tr>
-    <td width="75%" valign="middle">
-      <h3>Chapter III</h3>
-      <p><i>I value elegant systems, careful communication, and reliable shipping in multicultural teams.</i></p>
-      <p><i>多文化チームの中で、丁寧なコミュニケーションと安定したデリバリーを大切にしています。</i></p>
+    <td width="33%" valign="top">
+      <h3>Act I</h3>
+      <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
+      <p><i>グローバル視点とローカル文脈をつなぎ、仕様から実装まで一貫して設計します。</i></p>
+      <img src="https://media.giphy.com/media/WxebAUB8AABcWxYJlD/giphy.gif" width="100%" alt="Marin side visual I" />
     </td>
-    <td width="25%" align="left" valign="middle">
-      <img src="https://media.giphy.com/media/13d2jHlSlxklVe/giphy.gif" alt="Castle candle visual" width="90%">
+    <td width="67%" align="center">
+      <img src="./github-metrics.svg" width="100%" alt="GitHub metrics main card" />
+    </td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td width="67%" align="center">
+      <img src="./github-metrics-isocalendar.svg" width="100%" alt="GitHub metrics isocalendar card" />
+    </td>
+    <td width="33%" valign="top">
+      <h3>Act II</h3>
+      <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</i></p>
+      <p><i>日英バイリンガルでレビュー、設計議論、ドキュメント整備までシームレスに対応します。</i></p>
+      <img src="https://media.giphy.com/media/eW87Z8IuqEX7FBgBCy/giphy.gif" width="100%" alt="Marin side visual II" />
     </td>
   </tr>
 </table>
 
 <div align="center">
-  <img src="/github-metrics-stars.svg" alt="Recently starred metrics" width="58%">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=0:E7C56D,100:8C6A2F" width="100%" alt="Divider" />
 </div>
 
-<br>
-
-<table align="center" width="90%">
+<table width="100%">
   <tr>
-    <td width="25%" align="right" valign="middle">
-      <img src="https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif" alt="Noir rain visual" width="90%">
+    <td width="33%" valign="top">
+      <h3>Atelier Stack</h3>
+      <p><i>Tools I use to ship elegant systems with speed and reliability.</i></p>
+      <p>
+        <img src="https://img.shields.io/badge/TypeScript-1B2748?style=flat-square&logo=typescript&logoColor=E7C56D&labelColor=0D1117&color=0D1117" alt="TypeScript" />
+        <img src="https://img.shields.io/badge/Go-202C49?style=flat-square&logo=go&logoColor=E7C56D&labelColor=0D1117&color=0D1117" alt="Go" />
+        <img src="https://img.shields.io/badge/Python-2B2144?style=flat-square&logo=python&logoColor=E7C56D&labelColor=0D1117&color=0D1117" alt="Python" />
+        <img src="https://img.shields.io/badge/AWS-2F243F?style=flat-square&logo=amazonaws&logoColor=E7C56D&labelColor=0D1117&color=0D1117" alt="AWS" />
+        <img src="https://img.shields.io/badge/Docker-1E2F4D?style=flat-square&logo=docker&logoColor=E7C56D&labelColor=0D1117&color=0D1117" alt="Docker" />
+        <img src="https://img.shields.io/badge/Kubernetes-232F50?style=flat-square&logo=kubernetes&logoColor=E7C56D&labelColor=0D1117&color=0D1117" alt="Kubernetes" />
+        <img src="https://img.shields.io/badge/PostgreSQL-2D2442?style=flat-square&logo=postgresql&logoColor=E7C56D&labelColor=0D1117&color=0D1117" alt="PostgreSQL" />
+      </p>
+      <p><i>技術選定は「保守性・拡張性・運用性」のバランスを重視しています。</i></p>
     </td>
-    <td width="75%" valign="middle">
-      <h3>Chapter IV</h3>
-      <p><i>Open to collaborations where bilingual product thinking and global-local execution are both required.</i></p>
-      <p><i>グローバルとローカルの両視点が必要な開発・協業のご相談はいつでも歓迎です。</i></p>
+    <td width="67%" align="center">
+      <img src="./github-metrics-stars.svg" width="100%" alt="GitHub metrics stars card" />
+    </td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr>
+    <td width="67%" align="center">
+      <img src="./github-metrics-languages.svg" width="100%" alt="GitHub metrics languages card" />
+    </td>
+    <td width="33%" valign="top">
+      <h3>Act III</h3>
+      <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.</i></p>
+      <p><i>コードだけでなく、体験と文脈を含めた「伝わる実装」を目指します。</i></p>
+      <img src="https://media.giphy.com/media/dDZFrPg134bZIU2Ain/giphy.gif" width="100%" alt="Marin side visual III" />
+      <br><br>
+      <img src="https://komarev.com/ghpvc/?username=chronooo&style=for-the-badge&color=d4af37&label=PROFILE+VIEWS" alt="Profile views" />
     </td>
   </tr>
 </table>
 
 <div align="center">
-  <img src="/github-metrics-isocalendar.svg" alt="Isocalendar metrics" width="66%">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=140&section=footer&color=0:040406,35:141629,70:1E1530,100:040406" width="100%" alt="Footer banner" />
 </div>
