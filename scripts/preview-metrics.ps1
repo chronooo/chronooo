@@ -75,5 +75,17 @@ docker run --rm `
     -v "${outPath}:/renders" `
     lowlighter/metrics:v3.34 | Out-Host
 
+Write-Host "Rendering github-metrics-stars.svg..."
+docker run --rm `
+    -e INPUT_TOKEN=$token `
+    -e INPUT_USER=$User `
+    -e INPUT_FILENAME=github-metrics-stars.svg `
+    -e INPUT_BASE= `
+    -e INPUT_CONFIG_TIMEZONE=$Timezone `
+    -e INPUT_PLUGIN_STARS=yes `
+    -e INPUT_PLUGIN_STARS_LIMIT=4 `
+    -v "${outPath}:/renders" `
+    lowlighter/metrics:v3.34 | Out-Host
+
 Write-Host ""
 Write-Host "Done. Preview SVGs are in: $outPath"
