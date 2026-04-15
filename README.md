@@ -24,36 +24,68 @@
 <br>
 
 <div align="center">
+  <h3>Chapter I</h3>
+  <p><i>I am a foreign software engineer living in Japan, building products in a bilingual environment.</i></p>
+  <p><i>日本で暮らす外国籍ソフトウェアエンジニアとして、日英バイリンガルな開発環境でプロダクトを作っています。</i></p>
+</div>
+
+<div align="center">
   <img src="/github-metrics.svg" alt="Main profile metrics" width="74%">
 </div>
 
-<table align="center" width="100%">
+<br>
+
+<table align="center" width="90%">
   <tr>
-    <td width="33%" valign="top" align="center">
-      <h3>First Third</h3>
-      <p><i>Living in Japan as a foreign software engineer, I design systems across language and culture.</i></p>
-      <p><i>日本で働く外国籍エンジニアとして、言語と文化のあいだをつなぐ開発をしています。</i></p>
-      <img src="/github-metrics-languages.svg" alt="Languages metrics" width="92%">
+    <td width="25%" align="right" valign="middle">
+      <img src="https://media.giphy.com/media/3orieV5d6NQy6z6A6I/giphy.gif" alt="Rainy mood visual" width="90%">
     </td>
-    <td width="34%" valign="top" align="center">
-      <h3>Second Third</h3>
-      <p><i>Code reviews, architecture notes, and product discussions move fluidly between EN and JP.</i></p>
-      <p><i>設計レビュー、仕様の擦り合わせ、日々のコミュニケーションを日英でシームレスに進めます。</i></p>
-      <p><i>I work at a Japanese company and build products in an English/Japanese workflow.</i></p>
-      <p><i>日本企業でSWEとして、英語と日本語のバイリンガル環境でプロダクト開発を行っています。</i></p>
-      <p><i>Building quietly, shipping consistently, and learning deeply in two languages.</i></p>
-      <p><i>二つの言語で、静かに作り、着実に届け、深く学び続ける。</i></p>
-    </td>
-    <td width="33%" valign="top" align="center">
-      <h3>Third Third</h3>
-      <p><i>Open to collaboration where bilingual thinking and cross-cultural product building matters.</i></p>
-      <p><i>日英バイリンガルの視点が活きる開発や協業はいつでも歓迎です。</i></p>
-      <img src="/github-metrics-stars.svg" alt="Recently starred metrics" width="92%">
+    <td width="75%" valign="middle">
+      <h3>Chapter II</h3>
+      <p><i>My workflow moves naturally between English and Japanese for planning, architecture, and delivery.</i></p>
+      <p><i>設計・実装・運用まで、英語と日本語を行き来しながらシームレスに進めています。</i></p>
     </td>
   </tr>
 </table>
 
 <div align="center">
-  <br>
+  <img src="/github-metrics-languages.svg" alt="Languages metrics" width="64%">
+</div>
+
+<br>
+
+<table align="center" width="90%">
+  <tr>
+    <td width="75%" valign="middle">
+      <h3>Chapter III</h3>
+      <p><i>I value elegant systems, careful communication, and reliable shipping in multicultural teams.</i></p>
+      <p><i>多文化チームの中で、丁寧なコミュニケーションと安定したデリバリーを大切にしています。</i></p>
+    </td>
+    <td width="25%" align="left" valign="middle">
+      <img src="https://media.giphy.com/media/13d2jHlSlxklVe/giphy.gif" alt="Castle candle visual" width="90%">
+    </td>
+  </tr>
+</table>
+
+<div align="center">
+  <img src="/github-metrics-stars.svg" alt="Recently starred metrics" width="58%">
+</div>
+
+<br>
+
+<table align="center" width="90%">
+  <tr>
+    <td width="25%" align="right" valign="middle">
+      <img src="https://media.giphy.com/media/l0ExncehJzexFpRHq/giphy.gif" alt="Noir rain visual" width="90%">
+    </td>
+    <td width="75%" valign="middle">
+      <h3>Chapter IV</h3>
+      <p><i>Open to collaborations where bilingual product thinking and global-local execution are both required.</i></p>
+      <p><i>グローバルとローカルの両視点が必要な開発・協業のご相談はいつでも歓迎です。</i></p>
+    </td>
+  </tr>
+</table>
+
+<div align="center">
   <img src="/github-metrics-isocalendar.svg" alt="Isocalendar metrics" width="66%">
 </div>
