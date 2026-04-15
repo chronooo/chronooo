@@ -4,7 +4,9 @@ param(
     [string]$EnvFile = ".env.metrics",
     [string]$OutDir = "metrics-preview",
     [string]$Image = "ghcr.io/lowlighter/metrics:v3.34",
-    [bool]$SyncToRoot = $true
+    [bool]$SyncToRoot = $true,
+    [switch]$Sequential,
+    [switch]$PullLatest
 )
 
 Set-StrictMode -Version Latest
@@ -46,95 +48,169 @@ function Get-OptionalEnvValue {
     return ($line -split "=", 2)[1].Trim()
 }
 
-if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
-    throw "Docker is required but was not found in PATH."
-}
-
 function Invoke-MetricsRender {
     param(
+        [string]$Label,
         [string[]]$RenderArgs,
-        [string]$Label
+        [string]$MetricsImage
     )
 
     Write-Host "Rendering $Label..."
-    docker run --rm @RenderArgs $Image | Out-Host
+    docker run --rm @RenderArgs $MetricsImage | Out-Host
     if ($LASTEXITCODE -ne 0) {
         throw "Render failed for $Label (docker exit code: $LASTEXITCODE)"
     }
+}
+
+function Invoke-MetricsRenderParallel {
+    param(
+        [object[]]$RenderSet,
+        [string]$MetricsImage
+    )
+
+    Write-Host "Rendering in parallel ($($RenderSet.Count) jobs)..."
+    $jobs = @()
+    foreach ($render in $RenderSet) {
+        $jobs += Start-Job -Name $render.Label -ScriptBlock {
+            param($Label, $RenderArgs, $MetricsImage)
+            $tmp = [System.IO.Path]::GetTempFileName()
+            & docker run --rm @RenderArgs $MetricsImage *> $tmp
+            $exitCode = $LASTEXITCODE
+            $output = ""
+            if ($exitCode -ne 0) {
+                $output = Get-Content -LiteralPath $tmp -Raw
+            }
+            Remove-Item -LiteralPath $tmp -Force -ErrorAction SilentlyContinue
+            [pscustomobject]@{
+                Label = $Label
+                ExitCode = $exitCode
+                Output = $output
+            }
+        } -ArgumentList $render.Label, $render.RenderArgs, $MetricsImage
+    }
+
+    Wait-Job -Job $jobs | Out-Null
+
+    $results = @{}
+    foreach ($job in $jobs) {
+        $result = Receive-Job -Job $job -ErrorAction SilentlyContinue
+        Remove-Job -Job $job -Force
+        if ($null -eq $result) {
+            throw "Parallel render job failed unexpectedly: $($job.Name)"
+        }
+        $results[$result.Label] = $result
+    }
+
+    foreach ($render in $RenderSet) {
+        $result = $results[$render.Label]
+        Write-Host "Rendering $($result.Label)... done"
+        if ($result.ExitCode -ne 0) {
+            if (-not [string]::IsNullOrWhiteSpace($result.Output)) {
+                Write-Host $result.Output.TrimEnd()
+            }
+            throw "Render failed for $($result.Label) (docker exit code: $($result.ExitCode))"
+        }
+    }
+}
+
+if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
+    throw "Docker is required but was not found in PATH."
 }
 
 $token = Get-EnvValue -Path $EnvFile -Key "METRICS_TOKEN"
 if ([string]::IsNullOrWhiteSpace($token) -or $token -match "PASTE_YOUR_GITHUB_CLASSIC_PAT_HERE") {
     throw "Set a real METRICS_TOKEN value in $EnvFile before running."
 }
- 
-$commitsAuthoring = ".user.login, .user.email, 99775368+chronooo@users.noreply.github.com"
-$extraCommitsAuthoring = Get-OptionalEnvValue -Path $EnvFile -Key "METRICS_COMMITS_AUTHORING"
-if (-not [string]::IsNullOrWhiteSpace($extraCommitsAuthoring)) {
-    $commitsAuthoring = "$commitsAuthoring, $extraCommitsAuthoring"
-}
-$indepthCustom = Get-OptionalEnvValue -Path $EnvFile -Key "METRICS_LANG_INDEPTH_CUSTOM"
 
 New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
 $outPath = (Resolve-Path -LiteralPath $OutDir).Path
 
-Write-Host "Pulling metrics image: $Image"
-docker pull $Image | Out-Host
-if ($LASTEXITCODE -ne 0) {
-    throw "Unable to pull $Image"
+if ($PullLatest) {
+    Write-Host "Pulling metrics image: $Image"
+    docker pull $Image | Out-Host
+    if ($LASTEXITCODE -ne 0) {
+        throw "Unable to pull $Image"
+    }
+}
+else {
+    docker image inspect $Image *> $null
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Image not found locally. Pulling: $Image"
+        docker pull $Image | Out-Host
+        if ($LASTEXITCODE -ne 0) {
+            throw "Unable to pull $Image"
+        }
+    }
+    else {
+        Write-Host "Using local image: $Image"
+    }
 }
 
-Invoke-MetricsRender -Label "github-metrics.svg" -RenderArgs @(
-    "-e", "INPUT_TOKEN=$token",
-    "-e", "INPUT_USER=$User",
-    "-e", "INPUT_FILENAME=github-metrics.svg",
-    "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
-    "-e", "INPUT_PLUGIN_REPOSITORIES=yes",
-    "-e", "INPUT_PLUGIN_REPOSITORIES_PINNED=6",
-    "-v", "${outPath}:/renders"
-)
-
-Invoke-MetricsRender -Label "github-metrics-languages.svg" -RenderArgs @(
+$languageArgs = @(
     "-e", "INPUT_TOKEN=$token",
     "-e", "INPUT_USER=$User",
     "-e", "INPUT_FILENAME=github-metrics-languages.svg",
     "-e", "INPUT_BASE=",
     "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
-    "-e", "INPUT_REPOSITORIES_AFFILIATIONS=owner, collaborator, organization_member",
-    "-e", "INPUT_COMMITS_AUTHORING=$commitsAuthoring",
     "-e", "INPUT_PLUGIN_LANGUAGES=yes",
-    "-e", "INPUT_PLUGIN_LANGUAGES_LIMIT=8",
-    "-e", "INPUT_PLUGIN_LANGUAGES_DETAILS=bytes-size, percentage",
-    "-e", "INPUT_PLUGIN_LANGUAGES_SECTIONS=most-used",
-    "-e", "INPUT_PLUGIN_LANGUAGES_INDEPTH=yes",
-    "-e", "INPUT_PLUGIN_LANGUAGES_INDEPTH_CUSTOM=$indepthCustom",
-    "-e", "INPUT_PLUGIN_LANGUAGES_ANALYSIS_TIMEOUT=120",
-    "-e", "INPUT_PLUGIN_LANGUAGES_ANALYSIS_TIMEOUT_REPOSITORIES=20",
-    "-e", "INPUT_PLUGIN_LANGUAGES_IGNORED=html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot",
     "-v", "${outPath}:/renders"
 )
 
-Invoke-MetricsRender -Label "github-metrics-isocalendar.svg" -RenderArgs @(
-    "-e", "INPUT_TOKEN=$token",
-    "-e", "INPUT_USER=$User",
-    "-e", "INPUT_FILENAME=github-metrics-isocalendar.svg",
-    "-e", "INPUT_BASE=",
-    "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
-    "-e", "INPUT_PLUGIN_ISOCALENDAR=yes",
-    "-e", "INPUT_PLUGIN_ISOCALENDAR_DURATION=full-year",
-    "-v", "${outPath}:/renders"
+$renderSet = @(
+    [pscustomobject]@{
+        Label = "github-metrics.svg"
+        RenderArgs = @(
+            "-e", "INPUT_TOKEN=$token",
+            "-e", "INPUT_USER=$User",
+            "-e", "INPUT_FILENAME=github-metrics.svg",
+            "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
+            "-e", "INPUT_REPOSITORIES_AFFILIATIONS=owner, collaborator, organization_member",
+            "-e", "INPUT_PLUGIN_REPOSITORIES=yes",
+            "-e", "INPUT_PLUGIN_REPOSITORIES_PINNED=6",
+            "-e", "INPUT_PLUGIN_REPOSITORIES_AFFILIATIONS=owner, collaborator, organization_member",
+            "-v", "${outPath}:/renders"
+        )
+    },
+    [pscustomobject]@{
+        Label = "github-metrics-languages.svg"
+        RenderArgs = $languageArgs
+    },
+    [pscustomobject]@{
+        Label = "github-metrics-isocalendar.svg"
+        RenderArgs = @(
+            "-e", "INPUT_TOKEN=$token",
+            "-e", "INPUT_USER=$User",
+            "-e", "INPUT_FILENAME=github-metrics-isocalendar.svg",
+            "-e", "INPUT_BASE=",
+            "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
+            "-e", "INPUT_PLUGIN_ISOCALENDAR=yes",
+            "-e", "INPUT_PLUGIN_ISOCALENDAR_DURATION=full-year",
+            "-v", "${outPath}:/renders"
+        )
+    },
+    [pscustomobject]@{
+        Label = "github-metrics-stars.svg"
+        RenderArgs = @(
+            "-e", "INPUT_TOKEN=$token",
+            "-e", "INPUT_USER=$User",
+            "-e", "INPUT_FILENAME=github-metrics-stars.svg",
+            "-e", "INPUT_BASE=",
+            "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
+            "-e", "INPUT_PLUGIN_STARS=yes",
+            "-e", "INPUT_PLUGIN_STARS_LIMIT=4",
+            "-v", "${outPath}:/renders"
+        )
+    }
 )
 
-Invoke-MetricsRender -Label "github-metrics-stars.svg" -RenderArgs @(
-    "-e", "INPUT_TOKEN=$token",
-    "-e", "INPUT_USER=$User",
-    "-e", "INPUT_FILENAME=github-metrics-stars.svg",
-    "-e", "INPUT_BASE=",
-    "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
-    "-e", "INPUT_PLUGIN_STARS=yes",
-    "-e", "INPUT_PLUGIN_STARS_LIMIT=4",
-    "-v", "${outPath}:/renders"
-)
+if ($Sequential) {
+    foreach ($render in $renderSet) {
+        Invoke-MetricsRender -Label $render.Label -RenderArgs $render.RenderArgs -MetricsImage $Image
+    }
+}
+else {
+    Invoke-MetricsRenderParallel -RenderSet $renderSet -MetricsImage $Image
+}
 
 if ($SyncToRoot) {
     Copy-Item -LiteralPath (Join-Path $outPath "github-metrics.svg") -Destination ".\\github-metrics.svg" -Force
