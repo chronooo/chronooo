@@ -33,7 +33,7 @@
       <h3>✦ What I Build / つくってるもの</h3>
       <p><i>I build backend systems, cloud infrastructure, and practical AI/ML workflows.</i></p>
       <p><i>バックエンドとクラウド基盤を中心に、実務で効くAI/MLワークフローを作ってます。</i></p>
-      <img src="https://i.pinimg.com/originals/65/72/e2/6572e24756d746439d563c4da582c90e.gif" width="100%" alt="Marin side visual I" />
+      <img src="https://media1.tenor.com/m/aHkgRpFnY18AAAAC/marin-kitagawa-marin.gif" width="100%" alt="Marin side visual I" />
     </td>
     <td width="67%" align="center">
       <img src="./github-metrics.svg" width="100%" alt="GitHub metrics main card" />
