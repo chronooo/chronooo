@@ -1,5 +1,6 @@
 <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=600&size=31&duration=2500&pause=500&color=E7C56D&center=true&vCenter=true&multiline=true&repeat=false&width=1100&height=125&lines=%E3%81%94%E3%81%8D%E3%81%92%E3%82%93%E3%82%88%E3%81%86%EF%BC%81%E3%82%AF%E3%83%A9%E3%82%A4%E3%83%B3%E3%81%A7%E3%81%99%EF%BD%9E;%E6%9D%B1%E4%BA%AC%E3%81%A7%E5%83%8D%E3%81%84%E3%81%A6%E3%82%8B%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%A7%E3%81%99%E3%80%82" width="92%" alt="Typing banner" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=0:E7C56D,100:8C6A2F" width="100%" alt="Divider" />
 </div>
 
 <table width="100%">
@@ -16,7 +17,6 @@
         <img src="https://img.shields.io/badge/language-English_%E2%86%94_%E6%97%A5%E6%9C%AC%E8%AA%9E-1F2438?style=for-the-badge&labelColor=050507&color=C9A34B" alt="Language badge" />
         <img src="https://img.shields.io/badge/environment-Linux-151A2B?style=for-the-badge&labelColor=050507&color=B89455" alt="Linux badge" />
       </p>
-      <p><sub>Backend / Cloud / AI-ML / Bilingual workflow</sub></p>
     </td>
     <td width="36%" align="right" valign="middle">
       <img src="https://media.giphy.com/media/Sseh4gSbLQ4wBCuoBe/giphy.gif" width="100%" alt="Kitagawa Marin visual" />
