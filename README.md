@@ -8,7 +8,7 @@
       <h2>About Me / 自己紹介</h2>
       <p><i>Based in Tokyo, working as a Systems Engineer.</i></p>
       <p><i>東京でシステムエンジニアしてます。</i></p>
-      <p><i>My team is mostly Japanese-speaking, so feel free to reach out in English or Japanese.</i></p>
+      <p><i>My team is entirely Japanese-speaking, so feel free to reach out in English or Japanese.</i></p>
       <p><i>英語と日本語どっちもいけるので、ぜひ気軽に声をかけてください。</i></p>
       <p>
         <img src="https://img.shields.io/badge/location-Tokyo-12141F?style=for-the-badge&labelColor=050507&color=E7C56D" alt="Location badge" />
