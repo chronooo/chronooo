@@ -14,7 +14,7 @@
       <p>
         <img src="https://img.shields.io/badge/location-Tokyo-12141F?style=for-the-badge&labelColor=050507&color=E7C56D" alt="Location badge" />
         <img src="https://img.shields.io/badge/role-Systems_Engineer-1A1E33?style=for-the-badge&labelColor=050507&color=D9B86A" alt="Role badge" />
-        <img src="https://img.shields.io/badge/environment-Linux-151A2B?style=for-the-badge&labelColor=050507&color=B89455" alt="Linux badge" />
+        <img src="https://img.shields.io/badge/OS-Linux-151A2B?style=for-the-badge&labelColor=050507&color=B89455" alt="Linux badge" />
       </p>
     </td>
     <td width="36%" align="right" valign="middle">
