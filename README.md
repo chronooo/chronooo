@@ -100,5 +100,5 @@
 </table>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=140&section=footer&color=0:040406,35:141629,70:1E1530,100:040406" width="100%" alt="Footer banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=140&section=footer&color=0:040406,35:2A2110,70:E7C56D,100:040406" width="100%" alt="Footer banner" />
 </div>
