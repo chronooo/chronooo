@@ -197,7 +197,7 @@ $renderSet = @(
             "-e", "INPUT_BASE=",
             "-e", "INPUT_CONFIG_TIMEZONE=$Timezone",
             "-e", "INPUT_PLUGIN_STARS=yes",
-            "-e", "INPUT_PLUGIN_STARS_LIMIT=4",
+            "-e", "INPUT_PLUGIN_STARS_LIMIT=6",
             "-v", "${outPath}:/renders"
         )
     }

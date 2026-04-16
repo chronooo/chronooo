@@ -57,4 +57,4 @@ jobs:
           base: ""
           config_timezone: Asia/Tokyo
           plugin_stars: yes
-          plugin_stars_limit: 4
+          plugin_stars_limit: 6
