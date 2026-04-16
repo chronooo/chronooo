@@ -18,7 +18,7 @@
       </p>
     </td>
     <td width="36%" align="right" valign="middle">
-      <img src="https://media.giphy.com/media/Sseh4gSbLQ4wBCuoBe/giphy.gif" width="100%" alt="Kitagawa Marin visual" />
+      <img src="https://64.media.tumblr.com/7e25194ecc4261fc12a3d4a4d30b8fee/f705a19601ee60e4-88/s1280x1920/07afcf2b80b966bf1df18a00e1e7db2d10457a01.gifv" width="100%" alt="Kitagawa Marin visual" />
     </td>
   </tr>
 </table>
@@ -33,7 +33,7 @@
       <h3>✦ What I Build / つくってるもの</h3>
       <p><i>I build backend systems, cloud infrastructure, and practical AI/ML workflows.</i></p>
       <p><i>バックエンドとクラウド基盤を中心に、実務で効くAI/MLワークフローを作ってます。</i></p>
-      <img src="https://media.giphy.com/media/WxebAUB8AABcWxYJlD/giphy.gif" width="100%" alt="Marin side visual I" />
+      <img src="https://i.pinimg.com/originals/65/72/e2/6572e24756d746439d563c4da582c90e.gif" width="100%" alt="Marin side visual I" />
     </td>
     <td width="67%" align="center">
       <img src="./github-metrics.svg" width="100%" alt="GitHub metrics main card" />
@@ -50,7 +50,7 @@
       <h3>✦ Focus / 注力分野</h3>
       <p><i>Right now, I’m focused on reliability, maintainability, and developer productivity.</i></p>
       <p><i>最近は、信頼性や保守性、開発効率の向上に特に注力しています。</i></p>
-      <img src="https://media.giphy.com/media/eW87Z8IuqEX7FBgBCy/giphy.gif" width="100%" alt="Marin side visual II" />
+      <img src="https://media1.tenor.com/m/d548PiK-PNQAAAAC/anime-my-dress-up-darling.gif" width="100%" alt="Marin side visual II" />
     </td>
   </tr>
 </table>
