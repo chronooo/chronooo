@@ -86,6 +86,7 @@
   <tr>
     <td width="67%" align="center">
       <img src="./github-metrics-languages.svg" width="100%" alt="GitHub metrics languages card" />
+      <img src="https://64.media.tumblr.com/53ac623a6b22090a715a2e9bf8cdff6d/c7173b9d1e178cd6-de/s540x810/f712a4a978645037f14746cb765e8dc3e635e5f2.gifv" width="100%" height="300" alt="Languages section filler visual" />
     </td>
     <td width="33%" valign="top">
       <h3>Off hours / 趣味</h3>
