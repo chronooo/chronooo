@@ -30,7 +30,7 @@
 <table width="100%">
   <tr>
     <td width="33%" valign="top">
-      <h3>✦ What I Build / つくってるもの</h3>
+      <h3>✦ What I Build / 作ってるもの</h3>
       <p><i>I build backend systems, cloud infrastructure, and practical AI/ML workflows.</i></p>
       <p><i>バックエンドとクラウド基盤を中心に、実務で効くAI/MLワークフローを作ってます。</i></p>
       <img src="https://media1.tenor.com/m/aHkgRpFnY18AAAAC/marin-kitagawa-marin.gif" width="100%" alt="Marin side visual I" />
