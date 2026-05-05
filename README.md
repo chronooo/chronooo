@@ -1,7 +1,7 @@
-<div align="center">
+<!-- <div align="center">
   <img src="./assets/ornate-typing-banner.svg" width="100%" alt="Ornate black and gold typing banner" />
   <img src="https://capsule-render.vercel.app/api?type=rect&height=2&color=0:E7C56D,100:8C6A2F" width="100%" alt="Divider" />
-</div>
+</div> -->
 
 <table width="100%">
   <tr>
