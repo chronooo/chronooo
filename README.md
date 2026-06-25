@@ -109,3 +109,4 @@
   <img src="https://capsule-render.vercel.app/api?type=rect&height=3&color=0:8C6A2F,50:E7C56D,100:8C6A2F" width="100%" alt="Footer accent line" />
   <img src="https://capsule-render.vercel.app/api?type=waving&height=145&section=footer&color=0:040406,40:1A1408,72:E7C56D,100:040406" width="100%" alt="Footer banner" />
 </div>
+<!-- render trigger -->
